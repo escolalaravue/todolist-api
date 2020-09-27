@@ -66,6 +66,11 @@ class AuthService
         return $user;
     }
 
+    /**
+     * @param string $token
+     * @return mixed
+     * @throws VerifyEmailTokenInvalidException
+     */
     public function verifyEmail(string $token)
     {
         $user = User::where('confirmation_token', $token)->first();

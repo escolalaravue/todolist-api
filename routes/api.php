@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MeController;
+use App\Http\Controllers\TodoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,5 +16,9 @@ Route::prefix('v1')->group(function() {
     Route::prefix('me')->group(function() {
         Route::get('', [MeController::class, 'index']);
         Route::put('', [MeController::class, 'update']);
+    });
+
+    Route::prefix('todos')->group(function() {
+        Route::get('', [TodoController::class, 'index']);
     });
 });

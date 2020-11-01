@@ -24,5 +24,6 @@ Route::prefix('v1')->group(function() {
         Route::post('', [TodoController::class, 'store']);
         Route::put('{todo}', [TodoController::class, 'update']);
         Route::delete('{todo}', [TodoController::class, 'destroy']);
+        Route::post('{todo}/tasks', [TodoController::class, 'addTask']);
     });
 });

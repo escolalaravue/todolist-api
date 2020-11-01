@@ -20,6 +20,7 @@ Route::prefix('v1')->group(function() {
 
     Route::prefix('todos')->group(function() {
         Route::get('', [TodoController::class, 'index']);
+        Route::get('{todo}', [TodoController::class, 'show']);
         Route::post('', [TodoController::class, 'store']);
         Route::put('{todo}', [TodoController::class, 'update']);
         Route::delete('{todo}', [TodoController::class, 'destroy']);

@@ -28,6 +28,16 @@ class TodoController extends Controller
     }
 
     /**
+     * @param Todo $todo
+     * @return TodoResource
+     */
+    public function show(Todo $todo)
+    {
+        $todo->load('tasks');
+        return new TodoResource($todo);
+    }
+
+    /**
      * @param TodoStoreRequest $request
      * @return TodoResource
      */
